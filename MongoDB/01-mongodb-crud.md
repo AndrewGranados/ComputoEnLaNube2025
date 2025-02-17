@@ -333,4 +333,113 @@ db.libros.find(
 )
 ```
 
+### Operador Exist ()
+Permite saber si un campo se encuentra o no en un documento
+
+#### Ejemplos
+```json
+db.libros.find({
+    editorial:{$exists:true}    
+})
+
+db.libros.insertOne({
+    _id:10, 
+    titulo: 'Mongo en entornos gráficos',
+    editorial: "Terra",
+    precio: 125
+})
+
+```
+1. Mostrar todos los documentos que no contengan el campo cantidad
+```json
+    db.libros.find({
+        cantidad:{$exists:false}
+    })
+```
+
+2. Mostrar todos los documentos que contengan el campo cantidad
+```json
+    db.libros.find({
+        cantidad:{$exists:true}
+    })
+```
+
+### Operador type
+Permite preguntar si un determinado campo corresponde con un tipo
+
+[Operador Type](https://www.mongodb.com/docs/manual/reference/operator/query/type/#mongodb-query-op.-type)
+
+1. Mostrar todos los documentos donde el precio sean dobles
+
+```json
+db.libros.find({precio:{$type:1}})
+```
+
+```json
+db.libros.find({}, {_id:0, precio:1})
+```
+
+```json
+db.libros.find({precio:{$type:16}})
+```
+
+```json
+db.libros.insertOne({
+    _id:11,
+    titulo: 'IA',
+    editorial: 'Terra',
+    precio: 125.4,
+    cantidad: 20
+})
+```
+
+```json
+db.libros.find({precio:{$type:16}}, {_id:0, cantidad:0})
+```
+
+```json
+db.libros.insertMany([
+ {
+    _id: 12,
+    titulo: 'IA',
+    editorial: 'Terra',
+    precio: 125, 
+	cantidad: 20
+  },
+  {
+    _id: 13,
+    titulo: 'Python para todos',
+    editorial: 2001,
+    precio: 200, 
+	cantidad: 30
+  }]
+)
+```
+
+2. Seleccionar los documentos donde la editorial sea de tipo entero
+```json
+db.libros.find({ editorial: { $type: 16 } })
+```
+```json
+db.libros.find({ editorial: { $type: 'int' } })
+```
+
+3. Seleccionar los documentos donde la editorial sea de tipo string
+```json
+db.libros.find({ editorial: { $type: 2 } })
+```
+```json
+db.libros.find({ editorial: { $type: 'string' } })
+```
+
+## PRACTICA DE CONSULTA
+1. Instalar las tools de mongo db
+[DatabaseTools](https://www.mongodb.com/try/download/database-tools)
+
+2. Cargar el json empleados (debemos estar ubicados en la carpeta donde se encuentra el json empleados)
+
+- En local:
+    comando:
+        mongoimport --db curso --collection empleados --file empleados.json
+
 [Empleados.json](./Data/empleados.json)
