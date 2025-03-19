@@ -1,0 +1,83 @@
+
+db.productos.insertMany([
+    {
+        "codigo": 0,
+        "nombre": "Fantastic Wooden Fish",
+        "unidades": 95,
+        "precio": 291,
+        "fabricante": "Kimberly-Clark",
+        "tipo": "avanzado"
+    },
+    {
+        "codigo": 1,
+        "nombre": "Rustic Concrete Pants",
+        "unidades": 66,
+        "precio": 279,
+        "fabricante": "Mercury General",
+        "tipo": "medio"
+    },
+    {
+        "codigo": 2,
+        "nombre": "Small Soft Fish",
+        "unidades": 96,
+        "precio": 189,
+        "fabricante": "Primoris Services",
+        "tipo": "medio"
+    },
+    {
+        "codigo": 3,
+        "nombre": "Practical Soft Pants",
+        "unidades": 41,
+        "precio": 67,
+        "fabricante": "Hyatt Hotels",
+        "tipo": "avanzado"
+    },
+    {
+        "codigo": 4,
+        "nombre": "Ergonomic Metal Ball",
+        "unidades": 5,
+        "precio": 246,
+        "fabricante": "Seaboard",
+        "tipo": "medio"
+    },
+    {
+        "codigo": 5,
+        "nombre": "Small Steel Gloves",
+        "unidades": 45,
+        "precio": 37,
+        "fabricante": "TrueBlue",
+        "tipo": "avanzado"
+    },
+    {
+        "codigo": 6,
+        "nombre": "Ergonomic Wooden Shirt",
+        "unidades": 63,
+        "precio": 238,
+        "fabricante": "Securian Financial Group",
+        "tipo": "avanzado"
+    },
+    {
+        "codigo": 7,
+        "nombre": "Handmade Steel Chair",
+        "unidades": 16,
+        "precio": 337,
+        "fabricante": "CIT Group",
+        "tipo": "medio"
+    },
+    {
+        "codigo": 8,
+        "nombre": "Handcrafted Soft Gloves",
+        "unidades": 16,
+        "precio": 282,
+        "fabricante": "Pep Boys-Mann",
+        "tipo": "basico"
+    },
+    {
+        "codigo": 9,
+        "nombre": "Fantastic Concrete Salad",
+        "unidades": 49,
+        "precio": 265,
+        "fabricante": "Kar Auction Services",
+        "tipo": "basico"
+    }
+])

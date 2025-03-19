@@ -31,7 +31,7 @@ db.libros.countDocuments({editorial: {$eq:'Terra'}})
 
 4. Mostrar todas las distintas editoriales
 ```json
-db.libros.count
+db.libros.count()
 ```
 
 [Documentación de Agregaciones](https://www.mongodb.com/docs/manual/aggregation/)
@@ -76,19 +76,12 @@ db.libros.aggregate(
 [
   {
     $match:
-      /**
-       * query: The query in MQL.
-       */
       {
         editorial: "Terra"
       }
   },
   {
     $project:
-      /**
-       * specifications: The fields to
-       *   include or exclude.
-       */
       {
         _id: 0,
         titulo: 1,
@@ -109,19 +102,12 @@ db.libros.aggregate(
 [
   {
     $match:
-      /**
-       * query: The query in MQL.
-       */
       {
         editorial: "Terra"
       }
   },
   {
     $project:
-      /**
-       * specifications: The fields to
-       *   include or exclude.
-       */
       {
         _id: 0,
         titulo: 1,
@@ -135,9 +121,6 @@ db.libros.aggregate(
   },
   {
     $sort:
-      /**
-       * Provide any number of field/order pairs.
-       */
       {
         precio: 1
       }
@@ -236,10 +219,6 @@ db.libros.aggregate(
 [
   {
     $group:
-      /**
-       * newField: The new field name.
-       * expression: The new field expression.
-       */
       {
         _id: "property_type",
         Numero: {
@@ -263,12 +242,12 @@ db.libros.aggregate(
 1. Creando nuevas colecciones utilizando el operador $out
 - Nota: debe ser el último en la agregación
 
-json
+```json
 {
   db: "sample_airbnb",
   coll: "media_propiedades"
 }
-
+```
 
 
 - Ejemplos con operadores de comparación y lógicos
